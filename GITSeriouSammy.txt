@@ -1,0 +1,24 @@
+SideLength = float(input("Input side length: ")) # length  
+# unit selection (choose by number or name)
+units = {"1": "mm" , "2": "cm" , "3": "m" , "4": "km"}
+choice = input("Choose unit - 1:mm  2:cm  3:m  4:km  (enter number or unit): ").strip().lower()
+while True:
+    if choice in units:
+        unit = units[choice]
+        break
+    if choice in units.values():
+        unit = choice
+        break
+    choice = input("Invalid choice. Enter 1/2/3/4 or mm/cm/m/km: ").strip().lower()
+
+import math
+pi = math.pi
+
+SquareCircumference = SideLength * 4
+SquareArea = SideLength ** 2
+CircleDiameter = SideLength 
+CircleArea = pi * (CircleDiameter / 2) ** 2
+print("Circle Diameter:" , CircleDiameter , unit)
+print("Circle Area:" , CircleArea , unit+"²")
+print("Square Circumference:" , SquareCircumference , unit)
+print("Square Area:" , SquareArea , unit+"²")
